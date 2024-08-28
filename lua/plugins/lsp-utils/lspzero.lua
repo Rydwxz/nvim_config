@@ -70,6 +70,7 @@ return {
 				'tsserver',
         'vimls',
         'yamlls',
+        'zls',
 			},
 			handlers = {
 				function(server_name)
