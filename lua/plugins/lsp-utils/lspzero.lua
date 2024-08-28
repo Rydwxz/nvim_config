@@ -50,27 +50,27 @@ return {
 		require('mason').setup()
 		require('mason-lspconfig').setup({
 			ensure_installed = {
-        'bashls',
-				'biome',
-				'clangd',
-				'cmake',
-        'cssls',
-        'dockerls',
-				'gopls',
-				--'hls',
-        'jsonls',
-        'lemminx', --xml
-				'lua_ls',
-				'marksman',
-				'pyre',
-        'quick_lint_js',
-				'reason_ls',
-				'rust_analyzer',
-        'sorbet', --ruby
-				'tsserver',
-        'vimls',
-        'yamlls',
-        'zls',
+    --     'bashls',
+				-- 'biome',
+				-- 'clangd',
+				-- 'cmake',
+    --     'cssls',
+    --     'dockerls',
+				-- 'gopls',
+				-- --'hls',
+    --     'jsonls',
+    --     'lemminx', --xml
+				-- 'lua_ls',
+				-- 'marksman',
+				-- 'pyre',
+    --     'quick_lint_js',
+				-- 'reason_ls',
+				-- 'rust_analyzer',
+    --     'sorbet', --ruby
+				-- 'tsserver',
+    --     'vimls',
+    --     'yamlls',
+    --     'zls',
 			},
 			handlers = {
 				function(server_name)

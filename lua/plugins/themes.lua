@@ -4,7 +4,7 @@ return {
 	{'rktjmp/lush.nvim'},
 	{'uga-rosa/ccc.nvim', opts ={},},
 
-	{ dir = '~/dev/nv/bhs/' },
+	{ 'Rydwxz/bhs' },
 
 	{'Skalyaeve/a-nvim-theme'},
 	{'projekt0n/caret.nvim'},
