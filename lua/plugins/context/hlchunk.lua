@@ -2,6 +2,7 @@ return {
 
 	'shellRaining/hlchunk.nvim',
 	enabled = true,
+  lazy = false,
 	event = 'UIEnter',
 	opts = {
 		blank = {

@@ -5,6 +5,9 @@ kym('n', '<leader>,', '<Cmd>bprev<CR>')
 kym('n', '<leader>.', '<Cmd>bnext<CR>')
 kym('n', '<leader>x', function () require('bufdelete').bufdelete(0,true) end)
 
+--code-action
+kym('n', '<leader>ca', function () require('tiny-code-action').code_action() end)
+
 --codewindow
 kym('n', '<leader>mm', function() require('codewindow').toggle_minimap() end )
 kym('n', '<leader>mf', function() require('codewindow').toggle_focus() end )
@@ -65,6 +68,7 @@ kym('n', '<leader>fo', function() require('telescope.builtin').vim_options() end
 kym('n', '<leader>fy', function() require('telescope.builtin').registers() end )--yank
 kym('n', '<leader>fk', function() require('telescope.builtin').keymaps() end )
 kym('n', '<leader>fe', function() require('telescope.builtin').diagnostics() end )
+kym('n', '<leader>fl', function() require('telescope.builtin').highlights() end )
 
 --terminal
 vim.keymap.set('t', '<C-Space>', [[<C-\><C-n>]])
