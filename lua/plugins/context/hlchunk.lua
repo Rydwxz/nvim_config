@@ -3,28 +3,22 @@ return {
 	'shellRaining/hlchunk.nvim',
 	enabled = true,
   lazy = false,
-	event = 'UIEnter',
+	event = {'BufReadPre', 'BufNewFile'},
 	opts = {
-		blank = {
-			enable = false,
-		},
 		chunk = {
-			style = '#360808',
-			--style = '#ad0023',
-			--style = '#f9003f',
+      enable = true,
+			-- style = '#360808',
+			-- style = '#ad0023',
+			style = '#f9003f',
 			use_treesitter = false,
 			chars = {
 				-- horizontal_line = '',
 				right_arrow = '',
 			},
-		},
-		line_num = {
-			enable = false,
-			style = '#ff5a1d',
-			--style = '#cf4c00',
+      delay = 0,
 		},
 		indent = {
-			enable = false,
+      enable = true,
 			style = '#7f0800',
 		},
 	},

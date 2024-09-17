@@ -2,8 +2,13 @@ return {
 
 	'nvim-treesitter/nvim-treesitter-textobjects',
   lazy = false,
-  opts = { textobjects = {
+  -- config = function ()
+  --   require'nvim-treesitter.configs'.setup {
+  --     textobjects = {
+  --
+  --     }
+  --   }
+  -- end
 
-  },},
 
 }
