@@ -10,9 +10,7 @@ return {
 			-- style = '#360808',
 			-- style = '#ad0023',
 			style = '#f9003f',
-			use_treesitter = false,
 			chars = {
-				-- horizontal_line = '',
 				right_arrow = '',
 			},
       delay = 0,
