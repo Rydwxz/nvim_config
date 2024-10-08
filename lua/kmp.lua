@@ -20,6 +20,9 @@ kym('n', '<leader>tc', '<cmd>ColorizerToggle<cr>')
 
 --cmp mapping declared in lspzero.lua for reasons
 --
+--diagnostics
+kym('n', '<leader>ce', function () require'fnc'.v_line_toggle() end )
+
 --diffview
 kym('n', '<leader>dm', '<cmd>DiffviewOpen<cr>')
 kym('n', '<leader>dr', '<cmd>DiffviewRefresh<cr>')
@@ -36,9 +39,6 @@ vim.keymap.set("n", "gK", require("hover").hover_select, {desc = "hover.nvim (se
 
 --lazygit
 kym('n', '<leader>dg', '<cmd>LazyGit<cr>')
-
---numberline
-kym('n', '<leader>nn', function () require('fnc').numbertoggle() end)
 
 --oil
 kym('n', '-', '<CMD>Oil<CR>')
@@ -73,7 +73,7 @@ kym('n', '<leader>fl', function() require('telescope.builtin').highlights() end 
 --terminal
 vim.keymap.set('t', '<C-Space>', [[<C-\><C-n>]])
 
---tree
+--tree -- see nv-tree.lua for in-window keymaps
 kym('n', '<leader>rt', '<cmd>NvimTreeToggle<cr>')
 kym('n', '<leader>rf', '<cmd>NvimTreeFocus<cr>')
 
@@ -104,6 +104,12 @@ kym({"o",'v','x'}, "F", function ()require('spider').motion('w') end)
 kym({"n"}, "e", "<cmd>lua require('spider').motion('e')<CR>")
 kym({"n"}, "b", "<cmd>lua require('spider').motion('b')<CR>")
 kym({"n"}, "ge", "<cmd>lua require('spider').motion('ge')<CR>")
+
+--quickfix
+kym("n", "<leader>cn", "<cmd>cnext<cr>")
+kym("n", "<leader>cp", "<cmd>cprev<cr>")
+kym("n", "<leader>co", "<cmd>copen<cr>")
+kym("n", "<leader>cq", "<cmd>cclose<cr>")
 
 --undotree
 kym("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
