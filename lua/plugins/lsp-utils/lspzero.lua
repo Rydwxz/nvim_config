@@ -67,7 +67,7 @@ return {
 				'reason_ls',
 				'rust_analyzer',
         'sorbet', --ruby
-				'tsserver',
+				-- 'tsserver',
         'vimls',
         'yamlls',
         'zls',
