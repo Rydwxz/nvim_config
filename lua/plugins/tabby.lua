@@ -1,5 +1,5 @@
 return {
-
-  { 'TabbyML/vim-tabby' }
-
+--
+--   { 'TabbyML/vim-tabby' }
+--
 }
