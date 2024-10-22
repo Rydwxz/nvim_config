@@ -48,6 +48,14 @@ return {
           vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
           vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
           vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+          local id = vim.tbl_get(event, 'data', 'client_id')
+          local client = id and vim.lsp.get_client_by_id(id)
+          if client == nil then
+            return
+          end
+          if client.supports_method('textDocument/formatting') then
+            require('lsp-zero').buffer_autoformat()
+          end
         end,
       })
       require'mason-lspconfig'.setup({
@@ -78,6 +86,16 @@ return {
             require('lspconfig')[server_name].setup({})
           end,
         },
+      })
+      vim.diagnostic.config({
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN] = '',
+            [vim.diagnostic.severity.HINT] = '',
+            [vim.diagnostic.severity.INFO] = '',
+          }
+        }
       })
     end,
   },
