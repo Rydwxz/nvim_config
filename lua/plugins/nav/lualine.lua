@@ -60,8 +60,7 @@ return {
 		},
 		sections = {
 			lualine_a = {{'filename', path = 1 }}, -- {{'mode', fmt = function(res) return res:sub(1,1)..":" end}},
-			lualine_b = {function ()
-			end},
+			lualine_b = {},
 			lualine_c = { function()
 				local sig = require('lsp_signature').status_line(80)
 				return sig.label
