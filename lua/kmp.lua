@@ -75,8 +75,8 @@ kym('n', '<leader>fz', function() require('telescope.builtin').colorscheme() end
 vim.keymap.set('t', '<C-Space>', [[<C-\><C-n>]])
 
 --tree -- see nv-tree.lua for in-window keymaps
-kym('n', '<leader>rt', '<cmd>NvimTreeToggle<cr>')
-kym('n', '<leader>rf', '<cmd>NvimTreeFocus<cr>')
+kym('n', '<leader>tt', '<cmd>NvimTreeToggle<cr>')
+kym('n', '<leader>tf', '<cmd>NvimTreeFocus<cr>')
 
 --renamer
 kym('n', '<leader>dr', function() require("renamer").rename() end)
