@@ -49,10 +49,10 @@ return {
 
     {
         'folke/styler.nvim',
-        enabled = false,
+        enabled = true,
         opts = {
             themes = {
-                markdown = { colorscheme = 'dracula' },
+                markdown = { colorscheme = 'citruszest' },
                 c = { colorscheme = 'fleet' },
                 cpp = { colorscheme = 'vscode' },
                 python = { colorscheme = 'everblush' },
