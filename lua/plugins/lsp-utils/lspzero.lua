@@ -21,6 +21,7 @@ return {
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
+      { 'SmiteshP/nvim-navic' },
     },
     init = function()
       vim.opt.signcolumn = 'yes'
@@ -55,6 +56,8 @@ return {
           if client.supports_method('textDocument/formatting') then
             require('lsp-zero').buffer_autoformat()
           end
+          local navic = require 'nvim-navic'
+          navic.attach(client, event.buf)
         end,
       })
       require 'mason-lspconfig'.setup({
