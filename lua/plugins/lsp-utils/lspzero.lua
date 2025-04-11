@@ -74,7 +74,7 @@ return {
           'lemminx', --xml
           'lua_ls',
           'marksman',
-          'pyre',
+          'pylsp',
           'quick_lint_js',
           'reason_ls',
           'rust_analyzer',
