@@ -1,6 +1,6 @@
 return {
 
-    { dir = '~/dev/nv/bhs/' },
+    { dir = '~/src/nv/bhs/' },
 
     { 'NvChad/nvim-colorizer.lua',        config = true, lazy = false,                                  opts = {}, enabled = true, },
     { 'rktjmp/lush.nvim' },
@@ -52,7 +52,7 @@ return {
         enabled = true,
         opts = {
             themes = {
-                markdown = { colorscheme = 'citruszest' },
+                -- markdown = { colorscheme = 'citruszest' },
                 c = { colorscheme = 'fleet' },
                 cpp = { colorscheme = 'vscode' },
                 python = { colorscheme = 'everblush' },
