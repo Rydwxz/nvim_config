@@ -29,4 +29,4 @@ require("lazy").setup({
 
 vim.cmd('colorscheme black_hole_sun')
 require('kmp')
-require('pst')
+require('post')
