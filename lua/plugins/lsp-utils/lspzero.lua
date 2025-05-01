@@ -53,7 +53,7 @@ return {
           if client == nil then
             return
           end
-          if client.supports_method('textDocument/formatting') then
+          if client.supports_method('textDocument/formatting', 0) then
             require('lsp-zero').buffer_autoformat()
           end
           local navic = require 'nvim-navic'
@@ -123,6 +123,17 @@ return {
           ['<tab>'] = function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
+              cmp.select_next_item()
+              cmp.confirm()
+            else
+              fallback()
+            end
+          end,
+          ['<s-tab>'] = function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+              cmp.select_next_item()
+              cmp.select_next_item()
               cmp.confirm()
             else
               fallback()
@@ -131,14 +142,6 @@ return {
           ['<a-tab>'] = function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
-              cmp.select_next_item()
-              cmp.confirm()
-            else
-              fallback()
-            end
-          end,
-          ['<c-tab>'] = function(fallback)
-            if cmp.visible() then
               cmp.select_next_item()
               cmp.select_next_item()
               cmp.select_next_item()
