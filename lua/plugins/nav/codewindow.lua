@@ -1,8 +1,8 @@
 return {
---
--- 	'gorbit99/codewindow.nvim',
--- 	opts = {
--- 		minimap_width = 24,
--- 	},
---
+
+    'gorbit99/codewindow.nvim',
+    opts = {
+        minimap_width = 18,
+    },
+
 }
