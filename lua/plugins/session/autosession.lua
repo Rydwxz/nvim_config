@@ -10,12 +10,12 @@ return {
 
   'rmagatti/auto-session',
   opts = {
-    pre_save_cmds = { pre_sve_cmd },
-    post_restore_cmds = { pst_rst_cmd },
+    -- pre_save_cmds = { pre_sve_cmd },
+    -- post_restore_cmds = { pst_rst_cmd },
     use_git_branch = true,
   },
   dependencies = {
-    'nvim-tree/nvim-tree.lua',
+    "nvimtools/none-ls.nvim",
   },
 
 }
