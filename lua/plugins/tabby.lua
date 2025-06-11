@@ -1,5 +1,0 @@
-return {
---
---   { 'TabbyML/vim-tabby' }
---
-}
