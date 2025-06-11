@@ -3,7 +3,7 @@ return {
     { dir = '~/src/nv/bhs/' },
 
     { 'NvChad/nvim-colorizer.lua',        config = true, lazy = false,                                  opts = {}, enabled = true, },
-    { 'rktjmp/lush.nvim' },
+    -- { 'rktjmp/lush.nvim' },
     { 'uga-rosa/ccc.nvim',                opts = {}, },
 
 
