@@ -15,7 +15,7 @@ return {
         modes = {
             symbols = {
                 win = {
-                    size = { width = 0.4 },
+                    size = { width = 0.3 },
                 },
             },
         },
