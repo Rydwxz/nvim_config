@@ -26,6 +26,9 @@ kym('n', '<leader>dd', '<cmd>DiffviewOpen<cr>', { desc = "open diffview" })
 kym('n', '<leader>dr', '<cmd>DiffviewRefresh<cr>', { desc = "refresh diffview" })
 kym('n', '<leader>dc', '<cmd>DiffviewClose<cr>', { desc = "close diffview" })
 
+--digraphs
+kym('i', '<C-k><C-k>', function() require('better-digraphs').digraphs("insert") end, { desc = "digraph search" })
+
 --flash
 kym({ 'n', 'x', 'o' }, "s", function() require("flash").jump() end, { desc = "flash!" })
 kym({ 'n', 'x', 'o' }, "S", function() require("flash").treesitter() end, { desc = "flash treesitter" })
@@ -41,6 +44,12 @@ kym('n', '<leader>di', '<cmd>Inspect<cr>', { desc = "inspect highlight under cur
 --hover
 vim.keymap.set("n", "<leader>k", require("hover").hover, { desc = "hover.nvim" })
 vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
+
+--iron keymaps in iron because they're inconvenient
+kym('n', "<leader>rr",
+    function() require('iron.core').repl_for(vim.api.nvim_get_option_value("filetype", { scope = "local", buf = 0 })) end,
+    { desc = "flash remote diagnostic" })
+
 
 --lazygit
 kym('n', '<leader>dg', '<cmd>LazyGit<cr>', { desc = "lazygit" })
@@ -77,6 +86,7 @@ kym('n', '<leader>fk', function() require('telescope.builtin').keymaps() end, { 
 kym('n', '<leader>fd', function() require('telescope.builtin').diagnostics() end, { desc = "find diagnostics" })
 kym('n', '<leader>fl', function() require('telescope.builtin').highlights() end, { desc = "find hightlights" })
 kym('n', '<leader>fz', function() require('telescope.builtin').colorscheme() end, { desc = "find colorcheme" })
+kym('n', '<leader>fj', function() require('telescope.builtin').jumplist() end, { desc = "find jumplist" })
 
 --terminal
 vim.keymap.set('t', '<C-Space>', [[<C-\><C-n>]], { desc = "exit terminal mode" })
@@ -125,9 +135,5 @@ kym("n", "<leader>cp", "<cmd>cprev<cr>", { desc = "prev quickfix " })
 kym("n", "<leader>co", "<cmd>copen<cr>", { desc = "open quickfix" })
 kym("n", "<leader>cq", "<cmd>cclose<cr>", { desc = "close quickfix" })
 
---ufo
-kym('n', 'zR', require('ufo').openAllFolds, { desc = "open all folds" })
-kym('n', 'zM', require('ufo').closeAllFolds, { desc = "close all folds" })
-
 --undotree
--- kym("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "toggle undotree" })
+kym("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "toggle undotree" })
