@@ -1,5 +1,21 @@
 local M = {}
 
+M.autoformat = function(buf)
+    local group = 'lsp_autoformat'
+    vim.api.nvim_create_augroup(group, { clear = false })
+    vim.api.nvim_clear_autocmds({ group = group, buffer = buf })
+    vim.api.nvim_create_autocmd('BufWritePre', {
+        buffer = buf,
+        group = group,
+        desc = 'LSP format on save',
+        callback = function()
+            if vim.b.autoformat == true then
+                vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
+            end
+        end,
+    })
+end
+
 M.numbertoggle = function()
     if vim.wo.number then
         vim.wo.number = false

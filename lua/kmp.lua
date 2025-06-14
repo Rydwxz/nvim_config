@@ -1,5 +1,7 @@
 local kym = vim.keymap.set
---
+--autoformat
+kym('n', '<leader>az', function() vim.b.autoformat = not vim.b.autoformat end, { desc = "toggle autoformat" })
+
 --buffers/tabs
 kym('n', '<leader>,', '<Cmd>bprev<CR>', { desc = "prev buffer" })
 kym('n', '<leader>.', '<Cmd>bnext<CR>', { desc = "next buffer" })
@@ -96,6 +98,8 @@ kym('n', '<leader>tt', '<cmd>NvimTreeToggle<cr>', { desc = "toggle tree view" })
 kym('n', '<leader>tf', '<cmd>NvimTreeFocus<cr>', { desc = "focus tree view" })
 
 --trouble
+-- kym('n', '<leader>zz', function() require 'trouble'.toggle({ mode = "diagnostics symbols" }) end,
+-- { desc = "show diagnostics bottom " })
 kym('n', '<leader>zd', "<cmd>Trouble diagnostics toggle<cr>", { desc = "show diagnostics bottom " })
 kym('n', '<leader>ze', "<cmd>Trouble diagnostics toggle win.position=right win.size=0.5<cr>",
     { desc = "show diagnostics right" })

@@ -54,7 +54,8 @@ return {
             return
           end
           if client.supports_method('textDocument/formatting', 0) then
-            require('lsp-zero').buffer_autoformat()
+            vim.b.autoformat = true
+            require 'fnc'.autoformat(event.buf)
           end
           local navic = require 'nvim-navic'
           navic.attach(client, event.buf)
