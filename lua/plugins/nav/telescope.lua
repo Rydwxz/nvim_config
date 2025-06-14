@@ -8,7 +8,7 @@ return {
         defaults = {
             path_display = { shorten = 3, },
             layout_strategy = 'horizontal',
-            layout_config = { height = 0.99, width = 0.99 },
+            layout_config = { height = vim.o.lines, width = vim.o.columns },
         },
         pickers = {
             find_files = {
