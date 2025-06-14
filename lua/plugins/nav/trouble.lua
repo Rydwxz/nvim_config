@@ -3,6 +3,7 @@ return {
     'folke/trouble.nvim',
     opts = {
         auto_jump = true,
+        follow = true,
         indent_guides = false,
         open_no_results = true,
         keys = {
