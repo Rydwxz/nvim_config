@@ -43,10 +43,6 @@ kym('n', "<leader>sd", function() require('fnc').flash_diag() end, { desc = "fla
 --highlights
 kym('n', '<leader>di', '<cmd>Inspect<cr>', { desc = "inspect highlight under cursor" })
 
---hover
-vim.keymap.set("n", "<leader>k", require("hover").hover, { desc = "hover.nvim" })
-vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
-
 --iron keymaps in iron because they're inconvenient
 kym('n', "<leader>rr",
     function() require('iron.core').repl_for(vim.api.nvim_get_option_value("filetype", { scope = "local", buf = 0 })) end,
