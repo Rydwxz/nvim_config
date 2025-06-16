@@ -1,5 +1,7 @@
 local M = {}
 
+M.term = require 'term'
+
 M.autoformat = function(buf)
     local group = 'lsp_autoformat'
     vim.api.nvim_create_augroup(group, { clear = false })
