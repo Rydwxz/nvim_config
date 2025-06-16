@@ -56,13 +56,14 @@ end
 M.find_buffer = function()
     vim.cmd("enew")
     local buf = vim.api.nvim_get_current_buf()
-    local input = vim.api.nvim_list_bufs()
-    local str = ""
-    for k, v in pairs(input) do
-        str = str .. vim.api.nvim_buf_get_name(v) .. "\n"
-    end
-    -- vim.cmd("redir! > .out | silent ls | redir END")
-    vim.fn.jobstart("sh -c " .. vim.fn.shellescape(str .. " | tv"), {
+    -- local input = vim.api.nvim_list_bufs()
+    -- local str = ""
+    -- for k, v in pairs(input) do
+    --     str = str .. vim.api.nvim_buf_get_name(v) .. "\n"
+    -- end
+    vim.cmd("redir! > .out | silent ls | redir END")
+    -- vim.fn.jobstart("sh -c " .. vim.fn.shellescape(str .. " | tv"), {
+    vim.fn.jobstart("cat .out | tv", {
         term = true,
         on_exit = function(_, exit_code)
             if exit_code == 0 then
@@ -73,7 +74,7 @@ M.find_buffer = function()
             else
                 vim.api.nvim_buf_delete(buf, {})
             end
-            -- vim.cmd("silent! !rm .out")
+            vim.cmd("silent! !rm .out")
         end
     })
     vim.cmd("startinsert")
