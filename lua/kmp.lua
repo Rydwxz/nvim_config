@@ -77,8 +77,8 @@ kym('n', '<leader>fr', function() require('telescope.builtin').lsp_references() 
 kym('n', '<leader>fi', function() require('telescope.builtin').lsp_implementations() end,
     { desc = "find implementations" })
 kym('n', '<leader>fq', function() require('telescope.builtin').quickfix() end, { desc = "find quickfix items" })
-kym('n', '<leader>fc', function() require('telescope.builtin').grep_string() end, { desc = "find word under cursor" }) --cursor
--- kym('n', '<leader>fb', function() require('telescope.builtin').buffers() end, { desc = "find buffers" })
+kym('n', '<leader>fs', function() require('telescope.builtin').grep_string() end, { desc = "find word under cursor" }) --cursor
+kym('n', '<leader>fb', function() require('telescope.builtin').buffers() end, { desc = "find buffers" })
 kym('n', '<leader>fh', function() require('telescope.builtin').help_tags() end, { desc = "find help" })
 kym('n', '<leader>fp', function() require('telescope.builtin').man_pages() end, { desc = "find man page" }) --pages
 kym('n', '<leader>fo', function() require('telescope.builtin').vim_options() end, { desc = "find vim options" })
@@ -92,7 +92,7 @@ kym('n', '<leader>fj', function() require('telescope.builtin').jumplist() end, {
 -- television
 kym('n', '<leader>ff', function() require('fnc').term.find_file() end, { desc = "television files" })
 kym('n', '<leader>fb', function() require('fnc').term.find_buffer() end, { desc = "television buffers" })
-kym('n', '<leader>fs', function() require('fnc').term.find_content() end, { desc = "television contents" })
+-- kym('n', '<leader>fs', function() require('fnc').term.find_content() end, { desc = "television contents" })
 
 --terminal
 vim.keymap.set('t', '<C-Space>', [[<C-\><C-n>]], { desc = "exit terminal mode" })
