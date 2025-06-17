@@ -80,4 +80,16 @@ M.find_buffer = function()
     vim.cmd("startinsert")
 end
 
+M.find_env = function()
+    vim.cmd("enew")
+    local buf = vim.api.nvim_get_current_buf()
+    vim.fn.jobstart("tv env", {
+        term = true,
+        on_exit = function(_, exit_code)
+            vim.api.nvim_buf_delete(buf, {})
+        end
+    })
+    vim.cmd("startinsert")
+end
+
 return M
