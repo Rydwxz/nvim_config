@@ -56,11 +56,6 @@ end
 M.find_buffer = function()
     vim.cmd("enew")
     local buf = vim.api.nvim_get_current_buf()
-    -- local input = vim.api.nvim_list_bufs()
-    -- local str = ""
-    -- for k, v in pairs(input) do
-    --     str = str .. vim.api.nvim_buf_get_name(v) .. "\n"
-    -- end
     vim.cmd("redir! > .out | silent ls | redir END")
     -- vim.fn.jobstart("sh -c " .. vim.fn.shellescape(str .. " | tv"), {
     vim.fn.jobstart("cat .out | tv", {
@@ -75,6 +70,30 @@ M.find_buffer = function()
                 vim.api.nvim_buf_delete(buf, {})
             end
             vim.cmd("silent! !rm .out")
+        end
+    })
+    vim.cmd("startinsert")
+end
+
+M.find_buffer2 = function()
+    local input = vim.api.nvim_list_bufs()
+    vim.cmd("enew")
+    local buf = vim.api.nvim_get_current_buf()
+    local str = ""
+    for k, v in pairs(input) do
+        str = str .. vim.fn.pathshorten(vim.api.nvim_buf_get_name(v)) .. "\n"
+    end
+    vim.fn.jobstart("sh -c " .. vim.fn.shellescape("tv <<EOF " .. str .. "EOF"), {
+        term = true,
+        on_exit = function(_, exit_code)
+            if exit_code == 0 then
+                local unformatted = get_output_lines(buf)
+                local bufnr = string.match(unformatted, "%d+")
+                vim.api.nvim_buf_delete(buf, {})
+                vim.cmd("buffer " .. bufnr)
+            else
+                vim.api.nvim_buf_delete(buf, {})
+            end
         end
     })
     vim.cmd("startinsert")
