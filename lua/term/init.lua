@@ -57,7 +57,6 @@ M.find_buffer = function()
     vim.cmd("enew")
     local buf = vim.api.nvim_get_current_buf()
     vim.cmd("redir! > .out | silent ls | redir END")
-    -- vim.fn.jobstart("sh -c " .. vim.fn.shellescape(str .. " | tv"), {
     vim.fn.jobstart("cat .out | tv", {
         term = true,
         on_exit = function(_, exit_code)
