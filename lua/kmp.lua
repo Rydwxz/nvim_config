@@ -8,7 +8,7 @@ kym('n', '<leader>.', '<Cmd>bnext<CR>', { desc = "next buffer" })
 kym('n', '<leader>x', function() require('bufdelete').bufdelete(0, true) end, { desc = "close buffer" })
 
 --broot
-kym('n', '<leader>lb', function() require('fnc').term.broot() end, { desc = "broot" })
+-- kym('n', '<leader>lb', function() require('fnc').term.broot() end, { desc = "broot" })
 
 --code-action
 kym('n', '<leader>ca', function() require('tiny-code-action').code_action() end, { desc = "code action list" })
@@ -66,8 +66,8 @@ kym('n', '<leader>hc', '<cmd>TSNodeUnderCursor<cr>', { desc = "inspect treesitte
 vim.g.tabby_keybinding_accept = '<C-i>'
 
 --telescope
--- kym('n', '<leader>ff', function() require('telescope.builtin').find_files() end, { desc = "find file" })
--- kym('n', '<leader>fs', function() require('telescope.builtin').live_grep() end, { desc = "find string in file" }) --cwd
+kym('n', '<leader>ff', function() require('telescope.builtin').find_files() end, { desc = "find file" })
+kym('n', '<leader>fs', function() require('telescope.builtin').live_grep() end, { desc = "find string in file" }) --cwd
 kym('n', '<leader>ft', function() require('telescope.builtin').treesitter() end, { desc = "find treesitter symbol" })
 kym('n', '<leader>f/', function() require('telescope.builtin').current_buffer_fuzzy_find() end,
     { desc = "find current buffer" })
@@ -90,8 +90,9 @@ kym('n', '<leader>fz', function() require('telescope.builtin').colorscheme() end
 kym('n', '<leader>fj', function() require('telescope.builtin').jumplist() end, { desc = "find jumplist" })
 
 -- television
-kym('n', '<leader>ff', function() require('fnc').term.find_file() end, { desc = "television files" })
-kym('n', '<leader>fb', function() require('fnc').term.find_buffer() end, { desc = "television buffers" })
+kym('n', '<leader>lf', function() require('fnc').term.find_file() end, { desc = "television files" })
+kym('n', '<leader>lb', function() require('fnc').term.find_buffer() end, { desc = "television buffers" })
+kym('n', '<leader>la', function() require('fnc').term.find_buffer2() end, { desc = "television buffers" })
 -- kym('n', '<leader>fs', function() require('fnc').term.find_content() end, { desc = "television contents" })
 
 --terminal
