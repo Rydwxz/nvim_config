@@ -82,7 +82,7 @@ M.find_buffer2 = function()
     for k, v in pairs(input) do
         str = str .. (vim.api.nvim_buf_get_name(v)) .. "\n"
     end
-    vim.fn.jobstart("sh -c " .. vim.fn.shellescape("tv <<EOF " .. str .. "EOF"), {
+    vim.fn.jobstart("sh -c " .. vim.fn.shellescape('tv --preview "cat {0}" <<EOF ' .. str .. 'EOF'), {
         term = true,
         on_exit = function(_, exit_code)
             if exit_code == 0 then
