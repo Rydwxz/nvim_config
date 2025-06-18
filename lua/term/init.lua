@@ -81,7 +81,7 @@ M.find_buffer2 = function()
     local buf = vim.api.nvim_get_current_buf()
     local str = ""
     for k, v in pairs(input) do
-        str = str .. vim.fn.pathshorten(vim.api.nvim_buf_get_name(v)) .. "\n"
+        str = str .. (vim.api.nvim_buf_get_name(v)) .. "\n"
     end
     vim.fn.jobstart("sh -c " .. vim.fn.shellescape("tv <<EOF " .. str .. "EOF"), {
         term = true,
